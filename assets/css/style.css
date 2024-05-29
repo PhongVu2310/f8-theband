@@ -61,12 +61,14 @@ html {
     width: 33.33333%;
 }
 .btn {
+    
     display: inline-block;
     background-color: #000;
     color: #fff;
     padding: 8px 16px;
     margin-bottom: 15px;
     border: 1px solid #000
+    
  }
  .btn:hover {
     background-color: #ccc;
@@ -80,7 +82,7 @@ html {
 
 }
 
-#Header {
+#header {
     position: fixed;
     top: 0;
     left: 0;
@@ -112,6 +114,7 @@ html {
     text-decoration: none;
     padding: 0 24px;
     line-height: 46px; 
+    display: block;
 }
 #nav .subnav {
     display: none;
@@ -139,29 +142,40 @@ html {
 #nav .nav-arrow-down {
     font-size: 12px ;
 }
-#Header .nav-arrow-down {
+#header .nav-arrow-down {
     font-size: 12px;
 }
-#Header .search-btn {
-    float: right;
-    padding: 0 21px;
-    
+#header .mobile-menu-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
 }
-#Header .search-icon {
+
+#header .mobile-menu-btn,
+#header .search-btn {
+    float: right;
+    padding: 0 21px;   
+}
+#header .menu-icon,
+#header .search-icon {
     color: #fff;
     font-size: 20px;
-    line-height: 46px;
-    
+    line-height: 46px;   
 }
-#Header .search-btn:hover {
+#header .search-btn:hover {
     background-color: #f44336;
     cursor: pointer;
+}
+#header .mobile-menu-btn:hover {
+    background-color: #ccc;
+    color: #000;
 }
     
 #Slider {
     margin-top: 46px;
     padding-top: 50%;
-    background: url(/assets/img/Slider.jpg) top center / cover no-repeat;
+    background: url(../img/Slider.jpg) top center / cover no-repeat;
     position: relative;
     /* min-height: 1000px; */
 }
@@ -183,7 +197,7 @@ html {
 
 #Slider .text-description{
     font-size: 15px;
-
+    text-shadow: 0 0 4px #000;
 }
 
 #Content {
@@ -191,11 +205,12 @@ html {
 }
 #Content .content-section {
    width: 800px;
+   max-width: 100%;
    padding: 64px 0;
    margin-left: auto;
-   margin-right: auto;
-
-    
+   margin-right: auto;  
+   padding-left: 16px;
+   padding-right: 16px;
 }
 #Content .section-heading {
     font-family: "Segoe UI", Arial, sans-serif;
@@ -226,7 +241,7 @@ html {
 }
 
 #Content .member-list {
-    padding: 32px 0;
+    padding: 16px 0;
 }
 
 #Content .member-name {
@@ -285,16 +300,9 @@ html {
 }
 /* Places */
 .place-list {
-   margin-top: 32px;
+   margin-top: 16px;
    margin-bottom: 48px;
 }
-
-    
-
-.place-item {   
-    /* width: 33.33333%;  */
-}
-
 
 .place-img {
     width: 100%;
@@ -426,11 +434,18 @@ button#buy-ticket {
     color: #2196F3;
 }
 .contact-content {
-    margin: 48px 0;
+    margin: 32px 0;
 }
 .contact-info {
     font-size: 18px;
     line-height: 1.5;
+}
+.contact-info a {
+    color: #1717f0;
+    opacity: 0.6;
+}
+.contact-info a:hover {
+    opacity: 1;
 }
 .contact-info i[class*="ti-"] {
     width: 30px;
@@ -472,7 +487,7 @@ button#buy-ticket {
 }
 .copyright a {
     color: rgba(0, 0 , 0, 0.6 );
-}
+    
 
 @keyframes modalFadeIn {
     from {
